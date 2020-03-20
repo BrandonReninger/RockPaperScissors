@@ -1,32 +1,38 @@
-let choices = ["rock", "paper", "scissors"];
-let images = ['paper.png', 'rock.png', 'scissors.png'];
-let randomNum = Math.floor(Math.random() * 3);
-let computerChoice = choices[randomNum];
-console.log(computerChoice);
+let rock = {
+    img: ("rock.png"),
+    type: "rock"
+}
 
-function checkWinner(userChoice, computerChoice) {
-    let outComeElem = document.getElementById("game-outcome")
-    outComeElem.innerText = choices[""];
+let paper = {
+    img: ("rock.png"),
+    type: "paper"
+}
 
-    if (userChoice === computerChoice) {
-        return "Tie";
-    } else if (userChoice === choices[0] && computerChoice === choices[2]) {
-        return "You won!"
-    } else if (userChoice === choices[0] && computerChoice === choices[1]) {
-        return "You lost!"
-    } else if (userChoice === choices[1] && computerChoice === choices[0]) {
-        return "You won!"
-    } else if (userChoice === choices[1] && computerChoice === choices[2]) {
-        return "You lost!"
-    } else if (userChoice === choices[2] && computerChoice === choices[0]) {
-        return "You lost!"
-    } else if (userChoice === choices[2] && computerChoice === choices[1]) {
-        return "You won!"
+let scissors = {
+    img: ("scissors.png"),
+    type: "scissors"
+}
+
+
+let randomNum = Math.random();
+
+function computerChoice() {
+    play()
+    if (randomNum < 0.34) {
+        return rock;
+    } else if (randomNum <= 0.67) {
+        return paper;
+    } else {
+        return scissors;
     }
+}
 
 
 
-    function drawImage() {
-        let imageElem = document.getElementById("weapon")
-        imageElem.innerHTML = images[''];
-    }
+//FIXME make computer choice work correctly
+function play(userChoice) {
+    if (userChoice == computerChoice) {
+        console.log("It's a tie!")
+    } else if (userChoice === rock && computerChoice === scissors.type)
+}
+//FIXME
